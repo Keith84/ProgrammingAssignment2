@@ -12,8 +12,8 @@ makeCacheMatrix <- function(x = matrix()) {
         setinv <- function(inv) i <<- inv #if inverse present, inverse cached to i in parent environment
         getinv <- function() i #gets cached inverse value
         list(set = set, get = get, #lists the functions defined under makeCacheMatrix
-             setmean = setmean,
-             getmean = getmean)
+             setinv = setinv,
+             getinv = getinv)
 
 }
 
