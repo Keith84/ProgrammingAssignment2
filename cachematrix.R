@@ -3,15 +3,15 @@
 ## This function will create a matrix and cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
-    i <- NULL # sets inverse value, if present in parent environment
+    i <- NULL # established location for inverse value
         set <- function(y) { #caches value of x argument in global environment and initializes inverse to NULL
                 x <<- y
                 i <<- NULL
         }
         get <- function() x # retrives cached value of matrix
-        setinv <- function(inv) i <<- inv #inverse cached to i in parent environment
-        getinv <- function() i 
-        list(set = set, get = get,
+        setinv <- function(inv) i <<- inv #if inverse present, inverse cached to i in parent environment
+        getinv <- function() i #gets cached inverse value
+        list(set = set, get = get, #lists the functions defined under makeCacheMatrix
              setmean = setmean,
              getmean = getmean)
 
